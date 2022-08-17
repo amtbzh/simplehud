@@ -73,13 +73,19 @@
             let health = $('.health-status');
             let armor = $('.armor-status');
 
+            if (data.showHud == true) {
+                $('body').fadeIn(100);
+            } else {
+                $('body').fadeOut(100);
+            }
+
             if (data.health > 25) {
                 health.css({
-                    'background': 'linear-gradient(90deg, rgba(48,255,0,0.5) ' + data.health + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
+                    'background': 'linear-gradient(90deg, rgba(48,255,0,0.7) ' + data.health + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
                 });
             } else if (data.health < 25) {
                 health.css({
-                    'background': 'linear-gradient(90deg, rgba(255,72,0,0.5) ' + data.health + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
+                    'background': 'linear-gradient(90deg, rgba(255,72,0,0.7) ' + data.health + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
                 });
             }
 
@@ -91,12 +97,12 @@
             } else if (data.armor > 25) {
                 armor.text('');
                 armor.css({
-                    'background': 'linear-gradient(90deg, rgba(0,134,255,0.5) ' + data.armor + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
+                    'background': 'linear-gradient(90deg, rgba(0,134,255,0.7) ' + data.armor + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
                 });
             } else if (data.armor < 25) {
                 armor.text('');
                 armor.css({
-                    'background': 'linear-gradient(90deg, rgba(255,72,0,0.5) ' + data.armor + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
+                    'background': 'linear-gradient(90deg, rgba(255,72,0,0.7) ' + data.armor + '%' + ' ,rgba(0, 0, 0, 0.5) 50%)'
                 });
             }
 
